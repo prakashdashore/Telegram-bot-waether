@@ -44,12 +44,12 @@ bot.on('message', async (msg) => {
         });
 
         bot.onText(/\/help/, function onPhotoText(msg) {
-            console.log(msg)
+            // console.log(msg)
             bot.sendMessage(msg.chat.id,msg);
         })
 
         bot.onText(/\/start/,(msg)=> {
-            console.log(msg)
+            // console.log(msg)
             
             bot.sendMessage(msg.chat.id,`Wellcome to weather bot 🤖 : ${msg.from.first_name} \ `);
 
