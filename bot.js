@@ -3,31 +3,18 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 const  Telegram =  require('node-telegram-bot-api')
-const {Configuration,OpenAIApi} =  require('openai')
+
 const  token = process.env.BOT_TOKEN
 const  bot = new Telegram( process.env.BOT_TOKEN, {polling: true});
 
 const axios = require('axios')     
-
-const configuration = new Configuration({
-
-    
-    apiKey: process.env.OPENAI_API_KEY,
-    
-
-})
-
-
-
-
-const openai = new OpenAIApi(configuration)
-
 
 bot.on('message', async (msg) => {
     let chatId = msg.chat.id;
     let city = msg.text;
 
 
+    
     try {
         bot.setMyCommands([
             {command: '/start', description: 'Start the bot'},
